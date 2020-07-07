@@ -16,10 +16,10 @@ Route::get('/mensagem',['as'=>'site.mensagem','uses'=>'Site\LoginController@mens
 Route::get('/',['as'=>'site.Home','uses'=>'Site\HomeController@index']);
 
 //rota para a tela de loginss
-Route::get('/teste', function () {
-    return 'welcome';
-});
+Route::get('/perfil',['as'=>'Perfil.perfil','uses'=>'PerfilController@mostrar']);
 
+Route::get('/cadastrar',['as'=>'admin.cadastrar','uses'=>'CadastrarController@index']);
+Route::post('/cadastrar/cadastrado',['as'=>'admin.cadastrar.cadastrado','uses'=>'CadastrarController@cadastrado']);
 
 Route::get('/login',['as'=>'site.login','uses'=>'Site\LoginController@index']);
 Route::get('/login/sair',['as'=>'site.login.sair','uses'=>'Site\LoginController@sair']);

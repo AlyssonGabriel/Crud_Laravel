@@ -3,6 +3,7 @@
 <head>
 <title>@yield('titulo')</title>
 <!--Importar fonte do ícone do Google-->
+
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 <!--Importar materialize.css-->
 <!--CSS compilado e minificado -->
@@ -20,12 +21,16 @@
 <a href="#" data-target="mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
 <ul class="right hide-on-med-and-down">
 <li><a href="/">Home</a></li>
+<li><a href="{{route('admin.cadastrar')}}">Cadastrar</a></li>
+<li><a href="#">Comunidade</a></li>
+
+
 
 @if(Auth::guest())
 <li><a href="{{route('site.login')}}">Login</a></li>
 @else
 <li><a href="{{route('admin.loja')}}">Produtos</a></li>
-<li><a href="#">{{Auth::user()->name}}</a></li>
+<li><a href="{{route('Perfil.perfil')}}">{{Auth::user()->name}}</a></li>
 <li><a href="{{route('site.login.sair')}}">Sair</a></li>
 @endif
 

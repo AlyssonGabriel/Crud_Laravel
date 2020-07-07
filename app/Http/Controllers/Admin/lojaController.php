@@ -17,28 +17,41 @@ class lojaController extends Controller
     }
     public function Adicionar(){
       return view('admin.loja.adicionar');
+
     }
     public function salvar(Request $req){
-      $dados=$req->all();
+      //$this->authorize("admin.loja.salvar", \App\Loja::class);
+      try {
 
-      if(isset($dados['publicado'])){
-        $dados['publicado']='sim';
-      }else{
-        $dados['publicado']='nao';
-      }
+        \App\Validator\AdicionarValidator::validate($req->all());
+        $dados=$req->all();
 
-      if($req->hasfile('imagem')){
-        $imagem=$req->file('imagem');
-        $num=rand(1111,9999);
-        $dir="img/loja";
-        $ex=$imagem->guessClientExtension();
-        $nomeImagem="imagem_".$num.".".$ex;
-        $imagem->move($dir,$nomeImagem);
+        if(isset($dados['publicado'])){
+          $dados['publicado']='sim';
+        }else{
+          $dados['publicado']='nao';
+        }
 
-        $dados['imagem']=$dir."/".$nomeImagem;
-      }
-      Loja::create($dados);
-      return redirect()->route('admin.loja');
+        if($req->hasfile('imagem')){
+          $imagem=$req->file('imagem');
+          $num=rand(1111,9999);
+          $dir="img/loja";
+          $ex=$imagem->guessClientExtension();
+          $nomeImagem="imagem_".$num.".".$ex;
+          $imagem->move($dir,$nomeImagem);
+
+          $dados['imagem']=$dir."/".$nomeImagem;
+        }
+        Loja::create($dados);
+        return redirect()->route('admin.loja');
+
+      } catch (\App\Validator\ValidationException $exception ) {
+        return view('admin.loja.adicionar')->withErrors($exception->getValidator())
+;
+
+        //->withInput();
+	}
+
 
     }
     public function editar($id){

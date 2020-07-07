@@ -13,4 +13,7 @@ class HomeController extends Controller
       return view('Home',compact('produtos'));
 
     }
+    public function outra(){
+      return view('intro');
+    }
 }

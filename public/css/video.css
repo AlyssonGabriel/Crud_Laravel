@@ -1,0 +1,29 @@
+*{margin: 0; padding: 0;  box-sizing: border-box;}
+
+.container{
+  width: 100vw; height: 90vh;
+  position: relative;
+}
+
+.container video{
+  width: 100%; height: 100%;
+  object-fit: cover;
+}
+
+.content{
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+h1{
+  text-transform: uppercase;
+  font-size: 30px;
+  font-family: 'Arial Black';
+  white-space: nowrap;
+  color: #eee;
+  text-shadow: 0 0 2px #111;
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%);
+}

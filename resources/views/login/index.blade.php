@@ -14,11 +14,21 @@
 <div class="input-field">
 <input type="text" name="email">
 <label>E-mail</label>
+@error('email')
+<span class="invalid-feedback" role="alert">
+<strong>{{ $message }}</strong>
+</span>
+@enderror
 </div>
 
 <div class="input-field">
-<input type="password" name="senha">
+<input type="password" name="password">
 <label>Senha</label>
+@error('password')
+<span class="invalid-feedback" role="alert">
+<strong>{{ $message }}</strong>
+</span>
+@enderror
 </div>
 
 <button class="btn green">Entrar</button>
