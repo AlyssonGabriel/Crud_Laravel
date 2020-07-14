@@ -21,7 +21,20 @@ class CadastrarController extends Controller
             'name'=>$req->name,
             'email'=>$req->email,
             'password'=>Hash::make($req->password),
+            'imagem'=>$req->imagem,
           ];
+          //
+          // if($req->hasfile('imagem')){
+          //   $imagem=$req->file('imagem');
+          //   $num=rand(1111,9999);
+          //   $dir="img/loja";
+          //   $ex=$imagem->guessClientExtension();
+          //   $nomeImagem="imagem_".$num.".".$ex;
+          //   $imagem->move($dir,$nomeImagem);
+          //
+          //   $dados['imagem']=$dir."/".$nomeImagem;
+          // }
+
 
         User::create($dados);
         return redirect()->route('admin.loja');

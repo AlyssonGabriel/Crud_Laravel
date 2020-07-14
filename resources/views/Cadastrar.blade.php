@@ -42,6 +42,27 @@
 @enderror
 </div>
 
+<div class="file-field" class="input-field">
+<div class="btn blue">
+<span>Imagem</span>
+<input type="file" name="imagem">
+@error('imagem')
+<span class="invalid-feedback" role="alert">
+<strong>{{ $message }}</strong>
+</span>
+@enderror
+</div>
+
+<div class="file-path-wrapper">
+<input class="file-path validate" type="text">
+</div>
+</div>
+@if(isset($registros->imagem))
+<div class="input-field">
+<img width="150" src="{{asset($registros->imagem)}}" alt="">
+</div>
+@endif
+
 <button class="btn green">Pronto</button>
 </form>
 </div>

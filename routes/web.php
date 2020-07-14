@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 Route::get('/mensagem',['as'=>'site.mensagem','uses'=>'Site\LoginController@mensagem']);
 Route::get('/',['as'=>'site.Home','uses'=>'Site\HomeController@index']);
-
+Route::get('/comunidade',['as'=>'comunidade','uses'=>'ComunidadeController@listagem']);
 //rota para a tela de loginss
 Route::get('/perfil',['as'=>'Perfil.perfil','uses'=>'PerfilController@mostrar']);
 

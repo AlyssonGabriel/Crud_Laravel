@@ -10,15 +10,24 @@ class User extends Authenticatable
 {
     use Notifiable;
 
-     protected $fillable=['name', 'email','password'];
+     protected $fillable=['name', 'email','password','imagem'];
 
      public static $rules=[
        //'email' => 'required|email|unique:users,email',
-       'name'=>'required',
+    //   'name'=>'required',
        'email'=>'required',
        'password'=>'required',
      ];
 
+     public static $rulesCadastrar=[
+       'name'=>'required',
+       'email'=>'required',
+       'password'=>'required',
+       'imagem'=>'required',
+
+
+
+   ];
 
 
       public static $messages=['required'=>'*esse campo é obrigatório',

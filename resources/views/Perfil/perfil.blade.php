@@ -10,7 +10,7 @@
 
 
 <div class="box">
-    <img src="img/loja/l.jpg" >
+    <img src="img/loja/IconePerfil.png" >
     <p>{{Auth::user()->name}}</p>
 </div>
 

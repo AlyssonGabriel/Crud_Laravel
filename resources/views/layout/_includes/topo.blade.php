@@ -22,7 +22,7 @@
 <ul class="right hide-on-med-and-down">
 <li><a href="/">Home</a></li>
 <li><a href="{{route('admin.cadastrar')}}">Cadastrar</a></li>
-<li><a href="#">Comunidade</a></li>
+<li><a href="{{route('comunidade')}}">Comunidade</a></li>
 
 
 
