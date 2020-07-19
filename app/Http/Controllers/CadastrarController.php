@@ -23,17 +23,16 @@ class CadastrarController extends Controller
             'password'=>Hash::make($req->password),
             'imagem'=>$req->imagem,
           ];
-          //
-          // if($req->hasfile('imagem')){
-          //   $imagem=$req->file('imagem');
-          //   $num=rand(1111,9999);
-          //   $dir="img/loja";
-          //   $ex=$imagem->guessClientExtension();
-          //   $nomeImagem="imagem_".$num.".".$ex;
-          //   $imagem->move($dir,$nomeImagem);
-          //
-          //   $dados['imagem']=$dir."/".$nomeImagem;
-          // }
+          if($req->hasfile('imagem')){
+            $imagem=$req->file('imagem');
+            $num=rand(1111,9999);
+            $dir="img/loja";
+            $ex=$imagem->guessClientExtension();
+            $nomeImagem="imagem_".$num.".".$ex;
+            $imagem->move($dir,$nomeImagem);
+
+            $dados['imagem']=$dir."/".$nomeImagem;
+          }
 
 
         User::create($dados);

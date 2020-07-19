@@ -12,9 +12,7 @@ class User extends Authenticatable
 
      protected $fillable=['name', 'email','password','imagem'];
 
-     public static $rules=[
-       //'email' => 'required|email|unique:users,email',
-    //   'name'=>'required',
+     public static $rulesLogin=[
        'email'=>'required',
        'password'=>'required',
      ];
@@ -24,10 +22,7 @@ class User extends Authenticatable
        'email'=>'required',
        'password'=>'required',
        'imagem'=>'required',
-
-
-
-   ];
+];
 
 
       public static $messages=['required'=>'*esse campo é obrigatório',
