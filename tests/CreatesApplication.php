@@ -21,5 +21,10 @@ trait CreatesApplication
     }
     public function setUp(): void {
       parent::setUp();
+      \Artisan::call('migrate:refresh');
+      \Artisan::call('db:seed');
     }
+    public function tearDown(): void {
+   parent::tearDown();
+}
 }

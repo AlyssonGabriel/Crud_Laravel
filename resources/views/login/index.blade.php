@@ -31,7 +31,10 @@
 @enderror
 </div>
 
-<button class="btn green">Entrar</button>
+
+<input type="submit"  class="btn green" name="entrar">
+
+
 </form>
 </div>
 </div>

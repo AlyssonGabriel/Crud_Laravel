@@ -36,7 +36,7 @@ $factory->define(\App\User::class, function (Faker $faker) {
         'email_verified_at' => now(),
         'imagem' => $faker->imageUrl($width = 640, $height = 480,),
 
-        'password' =>'$2a$10$vcd2AHzq3jlXrR7SccF2T.Qw7v3Adtf7UbRlCfR79gZmgtnuwWpWK', // oi
+        'password' =>'$2a$10$FDi1ijOLN7qL2gKdoFIb7e9ZpYhGrWiM8KsaFltx7zYsuA/BrRvHG', // oi
         'remember_token' => Str::random(10),
 
     ];

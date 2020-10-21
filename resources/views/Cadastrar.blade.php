@@ -63,7 +63,8 @@
 </div>
 @endif
 
-<button class="btn green">Pronto</button>
+<button name="pronto" class="btn green" type="submit" >Pronto</button>
+
 </form>
 </div>
 </div>
